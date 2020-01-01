@@ -1,8 +1,8 @@
 package com.apporioinfolabs.taxisegment;
 
-import androidx.fragment.app.FragmentActivity;
-
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,7 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivityTaxi extends FragmentActivity implements OnMapReadyCallback {
+public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -20,9 +20,24 @@ public class MainActivityTaxi extends FragmentActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_taxi);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+        findViewById(R.id.action_one).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TaxiSegment.mBuilder == null){
+                    Log.e("TAXI SEGMENT: "+getClass().getSimpleName()+"  -> ","No Builder initialise for taxi segment");
+                }else{
+                    TaxiSegment.mBuilder.mTaxiSegmentActionHandler.onElementClick("need to some data here accordingly :)");
+                }
+
+            }
+        });
+
+
     }
 
 
