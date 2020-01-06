@@ -75,7 +75,7 @@ public class BaseTaxiActivity extends FragmentActivity implements ExampleInterfa
     }
 
     @Override
-    public void updateSomeView() {
+    public void updateSomeView(int action) {
 
     }
 }

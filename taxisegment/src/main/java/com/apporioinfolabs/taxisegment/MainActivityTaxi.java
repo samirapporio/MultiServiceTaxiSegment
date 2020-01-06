@@ -3,6 +3,7 @@ package com.apporioinfolabs.taxisegment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -16,12 +17,14 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
     private final static String TAG = "MainActivityTaxi";
+    ImageView lock_image ;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_taxi);
+        lock_image = findViewById(R.id.lock_image);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -76,9 +79,13 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
     }
 
     @Override
-    public void updateSomeView() {
-        Log.i(TAG , "Update some view --- 1");
-        super.updateSomeView();
-        Log.i(TAG , "Update some view -- 2");
+    public void updateSomeView(int action) {
+
+        if(action == TaxiSegmentActions.OpenLock){
+            lock_image.setImageResource(R.drawable.ic_open_lock_vector);
+        }if(action == TaxiSegmentActions.CloseLock){
+            lock_image.setImageResource(R.drawable.ic_closed_lock_vector);
+        }
+        super.updateSomeView(action);
     }
 }

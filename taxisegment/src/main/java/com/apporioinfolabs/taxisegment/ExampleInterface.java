@@ -2,6 +2,6 @@ package com.apporioinfolabs.taxisegment;
 
 public interface ExampleInterface {
 
-    void updateSomeView();
+    void updateSomeView(int action);
 
 }
