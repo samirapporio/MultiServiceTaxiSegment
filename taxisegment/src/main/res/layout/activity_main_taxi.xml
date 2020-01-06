@@ -33,9 +33,18 @@
             android:id="@+id/action_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Google  action one
-"
+            android:text="Google  action one"
             android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/select_payment_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Payment Method"
+            android:textAllCaps="false" />
+
+
 
 
     </LinearLayout>

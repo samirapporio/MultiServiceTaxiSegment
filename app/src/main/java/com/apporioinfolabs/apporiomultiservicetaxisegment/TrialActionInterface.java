@@ -10,4 +10,9 @@ public class TrialActionInterface implements TaxiSegmentActionHandler {
     public void onElementClick(String data) {
         Log.i("********************",""+data);
     }
+
+    @Override
+    public void onElementClick(String screenName, int actionName, String data) {
+
+    }
 }

@@ -37,6 +37,17 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
             }
         });
 
+        findViewById(R.id.select_payment_method).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TaxiSegment.mBuilder == null){
+                    Log.e("TAXI SEGMENT: "+getClass().getSimpleName()+"  -> ","No Builder initialise for taxi segment");
+                }else{
+                    TaxiSegment.mBuilder.mTaxiSegmentActionHandler.onElementClick(TaxiSegmentScreens.MainActivityTaxi,TaxiSegmentActions.SelectpaymentMethodScreen, null);
+                }
+            }
+        });
+
 
     }
 
