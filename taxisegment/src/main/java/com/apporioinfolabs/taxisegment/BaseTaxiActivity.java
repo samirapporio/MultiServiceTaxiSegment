@@ -70,7 +70,7 @@ public class BaseTaxiActivity extends FragmentActivity implements ExampleInterfa
         if(TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler == null){
             TaxiSegmentLogs.e(""+getClass().getSimpleName(),"Found No Taxi Screen LifeCycle handler");
         }else{
-            TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler.onScreenLifeCucler(""+getClass().getSimpleName(),""+lifeCycle, this);
+            TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler.onScreenLifeCycle(BaseTaxiActivity.this, BaseTaxiActivity.this, ""+getClass().getSimpleName(),""+lifeCycle, this);
         }
     }
 
