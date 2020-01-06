@@ -43,7 +43,7 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
                 if(TaxiSegment.mBuilder == null){
                     Log.e("TAXI SEGMENT: "+getClass().getSimpleName()+"  -> ","No Builder initialise for taxi segment");
                 }else{
-                    TaxiSegment.mBuilder.mTaxiSegmentActionHandler.onElementClick(TaxiSegmentScreens.MainActivityTaxi,TaxiSegmentActions.SelectpaymentMethodScreen, null);
+                    TaxiSegment.mBuilder.mTaxiSegmentActionHandler.onElementClick(MainActivityTaxi.this, MainActivityTaxi.this, TaxiSegmentScreens.MainActivityTaxi,TaxiSegmentActions.SelectpaymentMethodScreen, null);
                 }
             }
         });
