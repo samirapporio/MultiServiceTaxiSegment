@@ -4,11 +4,14 @@ import android.app.Application;
 
 import com.apporioinfolabs.taxisegment.handlers.TaxiSegmentActionHandler;
 import com.apporioinfolabs.taxisegment.handlers.TaxiSegmentScreensLifeCycleHandler;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class TaxiSegment {
 
     public static TaxiSegment.Builder mBuilder = null ;
     private static final String TAG = "TaxiSegment_TaxiSegment";
+    public static Gson gson ;
     
 
 
@@ -19,12 +22,14 @@ public class TaxiSegment {
     private static void init(TaxiSegment.Builder inBuilder) {
         // here comes the final builder object
         mBuilder = inBuilder ;
+        gson = new GsonBuilder().create();
+
     }
 
     public static class Builder {
-        Application mApplication;
-        String mBaseUrl ;
-        String mFontpath = "";
+        public  Application mApplication;
+        public String mBaseUrl ;
+        public String mFontpath = "";
 
         TaxiSegmentActionHandler mTaxiSegmentActionHandler;
         TaxiSegmentScreensLifeCycleHandler mTaxiSegmentScreensLifeCycleHandler;
