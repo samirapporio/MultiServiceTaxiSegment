@@ -11,7 +11,7 @@ import com.apporioinfolabs.taxisegment.utils.TaxiSegmentLogs;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class BaseTaxiActivity extends FragmentActivity {
+public class BaseTaxiActivity extends FragmentActivity implements ExampleInterface{
 
 
 
@@ -70,8 +70,12 @@ public class BaseTaxiActivity extends FragmentActivity {
         if(TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler == null){
             TaxiSegmentLogs.e(""+getClass().getSimpleName(),"Found No Taxi Screen LifeCycle handler");
         }else{
-            TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler.onScreenLifeCucler(""+getClass().getSimpleName(),""+lifeCycle);
+            TaxiSegment.mBuilder.mTaxiSegmentScreensLifeCycleHandler.onScreenLifeCucler(""+getClass().getSimpleName(),""+lifeCycle, this);
         }
     }
 
+    @Override
+    public void updateSomeView() {
+
+    }
 }
