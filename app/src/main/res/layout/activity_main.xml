@@ -9,10 +9,17 @@
     tools:context=".MainActivity">
 
 
+
+
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Taxi segment"
+        android:text="This is Taxi segment POC testing as a separate project"
         android:textSize="18dp"
+        android:gravity="center"
+        android:layout_margin="20dp"
         android:id="@+id/taxi_segment"/>
 </LinearLayout>
