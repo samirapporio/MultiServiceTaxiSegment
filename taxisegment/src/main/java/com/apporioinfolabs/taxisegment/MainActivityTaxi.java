@@ -76,7 +76,7 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
 
     @Override
     public void updateSomeView() {
-        super.updateSomeView();
         Toast.makeText(this, "need to work over this now ", Toast.LENGTH_SHORT).show();
+        super.updateSomeView();
     }
 }
