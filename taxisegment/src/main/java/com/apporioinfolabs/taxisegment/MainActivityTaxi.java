@@ -18,7 +18,7 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
     private final static String TAG = "MainActivityTaxi";
-    ImageView lock_image ;
+    private static ImageView lock_image ;
 
 
     @Override
@@ -79,22 +79,16 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
+    public static void updateThings(int action){
+        if(action == TaxiSegmentActions.OpenLock){
+            lock_image.setImageResource(R.drawable.ic_open_lock_vector);
+        }if(action == TaxiSegmentActions.CloseLock){
+            lock_image.setImageResource(R.drawable.ic_closed_lock_vector);
+        }
+    }
+
     @Override
     public void updateSomeView(final int action) {
-
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                if(action == TaxiSegmentActions.OpenLock){
-                    lock_image.setImageResource(R.drawable.ic_open_lock_vector);
-                }if(action == TaxiSegmentActions.CloseLock){
-                    lock_image.setImageResource(R.drawable.ic_closed_lock_vector);
-                }
-            }
-        });
-
-
-
         super.updateSomeView(action);
     }
 }
