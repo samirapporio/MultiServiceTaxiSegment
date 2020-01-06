@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private final static String TAG = "MainActivityTaxi";
 
 
     @Override
@@ -76,7 +77,8 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
 
     @Override
     public void updateSomeView() {
-        Toast.makeText(this, "need to work over this now ", Toast.LENGTH_SHORT).show();
+        Log.i(TAG , "Update some view --- 1");
         super.updateSomeView();
+        Log.i(TAG , "Update some view -- 2");
     }
 }
