@@ -31,7 +31,7 @@
             android:layout_gravity="bottom|right"
             android:layout_margin="20dp"
             android:id="@+id/lock_image"
-            android:src="@drawable/ic_open_lock_vector"/>
+            android:src="@drawable/ic_closed_lock_vector"/>
 
     </FrameLayout>
 

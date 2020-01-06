@@ -1,6 +1,7 @@
 package com.apporioinfolabs.taxisegment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -79,13 +80,21 @@ public class MainActivityTaxi extends BaseTaxiActivity implements OnMapReadyCall
     }
 
     @Override
-    public void updateSomeView(int action) {
+    public void updateSomeView(final int action) {
 
-        if(action == TaxiSegmentActions.OpenLock){
-            lock_image.setImageResource(R.drawable.ic_open_lock_vector);
-        }if(action == TaxiSegmentActions.CloseLock){
-            lock_image.setImageResource(R.drawable.ic_closed_lock_vector);
-        }
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                if(action == TaxiSegmentActions.OpenLock){
+                    lock_image.setImageResource(R.drawable.ic_open_lock_vector);
+                }if(action == TaxiSegmentActions.CloseLock){
+                    lock_image.setImageResource(R.drawable.ic_closed_lock_vector);
+                }
+            }
+        });
+
+
+
         super.updateSomeView(action);
     }
 }
